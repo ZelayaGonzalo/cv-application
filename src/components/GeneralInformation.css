@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #CAD2C5;
+}
+.formContainer{
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+    width: 60vw;
+    min-width: 450px;
+    display: grid;
+    background-color: #84A98C;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.inputLabel{
+    margin:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputLarge{
+    justify-self: center;
+    grid-column: 1/span 2;
+}
+.formContainerEducational{
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+    width: 60vw;
+    min-width: 450px;
+    display: grid;
+    background-color: #84A98C;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.formContainerEducational #schoolInput{
+    justify-self: center;
+    grid-column: 1/span 2;
+}
+
+.formWorkExperience{
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+    width: 60vw;
+    min-width: 450px;
+    display: grid;
+    background-color: #84A98C;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
