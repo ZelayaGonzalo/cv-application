@@ -1,8 +1,8 @@
 import React from "react"
 
 class EducationalInformation extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             schoolName : "",
             title : "",
@@ -13,15 +13,17 @@ class EducationalInformation extends React.Component{
     }
     handleChange(event){
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const value = target.value;
         const name = target.name;
         this.setState({
             [name] : value,
         })
     }
     render(){
+        const isEditable=(this.props.canedit ==="true")? true :false ;
         return(
             <div>
+                {isEditable ?
                 <form className="formContainerEducational">
                     <label className="inputLarge" >
                         School: 
@@ -40,6 +42,14 @@ class EducationalInformation extends React.Component{
                         <input type="date" name="finished" onChange={this.handleChange} value={this.state.finished}/>
                 </label>
                 </form>
+                :
+                <div>
+                    <p>School Name: {this.state.schoolName} </p>
+                    <p>Title: {this.state.title} </p>
+                    <p>Course date : {this.state.started} until {this.state.finished} </p>
+
+                </div>
+            }
                    
             </div>
         )

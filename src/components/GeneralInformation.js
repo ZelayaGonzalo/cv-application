@@ -1,9 +1,9 @@
 import React from "react"
-import "./GeneralInformation.css"
+
 
 class GeneralInformation extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             name : "",
             lastName : "",
@@ -22,8 +22,10 @@ class GeneralInformation extends React.Component{
     }
 
     render(){
+        const isEditable=(this.props.canedit ==="true")? true :false ;
         return(
             <div className="allContainer"> 
+            {isEditable ? 
                 <form className="formContainer">
                     <label className="inputLabel">
                         First Name: 
@@ -35,20 +37,21 @@ class GeneralInformation extends React.Component{
                     </label>
                     <label className="inputLabel">
                        Email: 
-                        <input type="email" name="email" onChange={this.handleChange} value={this.state.email}/>
+                        <input type="email" name="email" onChange={this.handleChange} value={this.state.email} required/>
                     </label>
                     <label className="inputLabel">
                        Phone: 
                         <input type="phone" name="phone" onChange={this.handleChange} value={this.state.phone}/>
                     </label>
                 </form>
-                {/*<div>
+                :
+                <div>
                     <p>Name: {this.state.name} {this.state.lastName} </p>
                     <p>Email: {this.state.email} </p>
                     <p>Phone: {this.state.phone} </p>
 
-                </div>*/}
-
+                </div>
+            }
             </div>
         )
     }

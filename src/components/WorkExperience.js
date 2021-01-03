@@ -1,8 +1,8 @@
 import React from "react"
 
 class WorkExperience extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
            companyName : "",
            position : "",
@@ -22,8 +22,10 @@ class WorkExperience extends React.Component{
     }
 
     render(){
+        const isEditable=(this.props.canedit ==="true")? true :false ;
         return(
             <div>
+                {isEditable ?
                 <form className="formWorkExperience">
                     <label className="inputLarge">
                         Company: 
@@ -43,9 +45,18 @@ class WorkExperience extends React.Component{
                     </label>
                     <label className="inputLabel">
                         Until: 
-                        <input type="date" name="finsihed" onChange={this.handleChange} value={this.state.finished}/>
+                        <input type="date" name="finished" onChange={this.handleChange} value={this.state.finished}/>
                     </label>
                 </form>
+                :
+                <div>
+                    <p>Company Name: {this.state.name} {this.state.lastName} </p>
+                    <p>Position: {this.state.email} </p>
+                    <p>Main task: {this.state.phone} </p>
+                    <p>From: {this.state.started} until {this.state.finished} </p>
+
+                </div>
+            }
             </div>
         )
     }

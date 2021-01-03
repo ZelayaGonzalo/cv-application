@@ -5,6 +5,7 @@ body{
     padding: 0;
     background-color: #CAD2C5;
 }
+
 .formContainer{
     border-radius: 20px;
     margin: 30px;
@@ -59,4 +60,16 @@ body{
     grid-template-rows:1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
+}
+.titles{
+    display: flex;
+    justify-content: center;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    height: 30px;
+    width: 200px;
 }
